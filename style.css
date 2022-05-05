@@ -1,3 +1,4 @@
+/* === GERAL === */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +10,12 @@
   --headline: #061800;
   --paragraph: #384633;
   --white: #ededed;
-  --brand-beige: #FFFAF1:
+  --brand-beige: #fffaf1;
+  --brand-light: #dce9e2;
 
   font-size: 62, 5%; /* 1rem = 10px */
+
+  --nav-height: 7.2rem;
 }
 
 body {
@@ -20,28 +24,46 @@ body {
   text-align: center;
 }
 
-header {
+.wrapper {
   width: 37.5rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 2rem;
-  margin-top: 4.1rem;
+  margin-inline: auto;
+  padding-inline: 2.4rem;
 }
 
-h4 {
+/* === HEADER === */
+
+header {
+  margin-top: calc(4.1rem + var(--nav-height));
+}
+
+header::before {
+  /* before significa antes do conteúdo */
+  content: "";
+  width: 100vw;
+  height: calc(108rem + var(--nav-height));
+  background-color: var(--brand-light);
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* eixo z -1 enviando a caixa para trás do conteudo */
+}
+
+header h4 {
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: 1.6rem;
 }
 
-h1 {
+header h1 {
   font-size: 3.4rem;
   color: var(--headline);
   line-height: 130%;
   margin-bottom: 2.4rem;
 }
 
-p {
+header p {
   font-size: 1.8rem;
   line-height: 150%;
   font-weight: 400;
@@ -49,7 +71,7 @@ p {
   margin-bottom: 3.2rem;
 }
 
-button {
+header button {
   background-color: var(--primary-color);
   border: none;
   border-radius: 4rem;
@@ -67,24 +89,31 @@ button {
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
-  
+
   margin-right: auto; /* Trocar para essa propriedade margin-inline: auto; */
   margin-left: auto; /* apagar, a propriedade de cima substitui essa */
 }
 
-img {
+header img {
+  display: block;
+  margin-inline: auto;
+  width: 26.4rem;
+  object-position: 0 2rem;
 }
 
 .stats {
   width: 32.7rem;
-  height: 47rem;
+  padding-block: 4rem; /* inserindo padding em cima e em baixo do bloco*/
   margin-inline: auto;
+
   background-color: var(--brand-beige);
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 6rem; /* espaçamento entre os elementos filhos */
-
 }
 
 .stat h3 {
@@ -99,4 +128,23 @@ img {
   color: var(--primary-color);
   line-height: 150%;
   margin: 0;
+}
+
+/* === NAVIGATION === */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav.scroll {
+  background-color: var(--primary-color);
 }
