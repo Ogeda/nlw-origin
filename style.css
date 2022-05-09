@@ -12,6 +12,7 @@
   --white: #ededed;
   --brand-beige: #fffaf1;
   --brand-light: #dce9e2;
+  --bg-light: #f7f9f9;
 
   font-size: 62, 5%; /* 1rem = 10px */
 
@@ -31,6 +32,8 @@ body {
   text-align: center;
 
   overflow: overlay;
+
+  background: var(--bg-light);
 }
 
 .wrapper {
@@ -41,6 +44,10 @@ body {
 
 ul {
   list-style: none;
+}
+
+section {
+  padding-block: 10rem;
 }
 
 /* === HEADER === */
@@ -300,7 +307,22 @@ body.menu-expanded button path {
   margin-bottom: 6rem;
 }
 
-.card {
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+#services .card {
   padding: 2.4rem;
   text-align: left;
+
+  background: #ffffff;
+
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+}
+
+#services .card h3 {
+  margin-block: 1.6rem;
 }
