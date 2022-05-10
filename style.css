@@ -19,6 +19,10 @@
   --nav-height: 7.2rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   width: 100%;
@@ -50,13 +54,13 @@ section {
   padding-block: 10rem;
 }
 
-/* === HEADER === */
+/* === HOME === */
 
-header {
-  margin-top: calc(4.1rem + var(--nav-height));
+#home {
+  padding-top: calc(4.1rem + var(--nav-height));
 }
 
-header::before {
+#home::before {
   /* before significa antes do conteúdo */
   content: "";
   width: 100%;
@@ -70,20 +74,20 @@ header::before {
   z-index: -1; /* eixo z -1 enviando a caixa para trás do conteudo */
 }
 
-header h4 {
+#home h4 {
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: 1.6rem;
 }
 
-header h1 {
+#home h1 {
   font-size: 3.4rem;
   color: var(--headline);
   line-height: 130%;
   margin-bottom: 2.4rem;
 }
 
-header p {
+#home p {
   font-size: 1.8rem;
   line-height: 150%;
   font-weight: 400;
@@ -91,7 +95,7 @@ header p {
   margin-bottom: 3.2rem;
 }
 
-header button {
+#home button {
   background-color: var(--primary-color);
   border: none;
   border-radius: 4rem;
@@ -114,14 +118,14 @@ header button {
   margin-left: auto; /* apagar, a propriedade de cima substitui essa */
 }
 
-header img {
+#home img {
   display: block;
   margin-inline: auto;
   width: 26.4rem;
   object-position: 0 2rem;
 }
 
-.stats {
+#home .stats {
   width: 32.7rem;
   padding-block: 4rem; /* inserindo padding em cima e em baixo do bloco*/
   margin-inline: auto;
@@ -136,14 +140,14 @@ header img {
   gap: 6rem; /* espaçamento entre os elementos filhos */
 }
 
-.stat h3 {
+#home .stat h3 {
   font-size: 4.8rem;
   color: var(--headline);
   line-height: 130%;
   margin-bottom: 0.4rem;
 }
 
-.stat p {
+#home .stat p {
   font-size: 1.6rem;
   color: var(--primary-color);
   line-height: 150%;
@@ -211,7 +215,9 @@ body.menu-expanded .close-menu {
 }
 
 .menu {
-  transform: translateY(100%);
+  transform: translateY(
+    100%
+  ); /* através do translateY 100%, o menu fica pra fora da pagina */
 }
 
 body.menu-expanded .menu {
